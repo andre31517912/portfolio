@@ -572,6 +572,13 @@ export const experience: Experience[] = [
       "Ran hourly sessions with children diagnosed with ASD, collecting and processing clinical data for interdisciplinary care teams. Automated data pipelines with Python (pandas, NumPy) and built custom dashboards to translate complex behavioral data into actionable insights through statistical analysis and visualization.",
   },
   {
+    company: "HandshakeAI",
+    role: "AI Trainer",
+    date: "2024",
+    description:
+      "Evaluated and refined model outputs to improve response quality, writing detailed feedback and rankings that helped shape more accurate, helpful, and safe AI behavior across a range of prompts.",
+  },
+  {
     company: "Phi Kappa Psi Fraternity",
     role: "VP of Operations, Marketing & Outreach",
     date: "Nov 2023 — Jun 2025",
