@@ -30,7 +30,12 @@ export function Experience() {
                 </span>
               </div>
               <div>
-                <p className="text-foreground">{job.role}</p>
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="text-foreground">{job.role}</p>
+                  <span className="rounded-full border border-border px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
+                    {job.type}
+                  </span>
+                </div>
                 <p className="mt-1 text-pretty leading-relaxed text-muted-foreground">
                   {job.description}
                 </p>
