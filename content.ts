@@ -71,7 +71,26 @@ export const projectsTier1: Project[] = [
     name: "Judien",
     description:
       "Event RSVP platform for a Rotary International chapter in Taiwan. Co-built with a partner.",
-    stack: ["React", "TypeScript", "Vercel"],
+    stack: [
+      "Next.js 14",
+      "React",
+      "Expo React Native",
+      "TypeScript",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "BullMQ",
+      "JWT",
+      "bcryptjs",
+      "Twilio",
+      "SendGrid",
+      "next-intl",
+      "i18next",
+      "Zod",
+      "pnpm",
+      "Vercel",
+    ],
     heroImage: "/projects/judien-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -92,17 +111,22 @@ export const projectsTier1: Project[] = [
       {
         label: "Frontend",
         detail:
-          "React + TypeScript single-page app with a component-driven layout and typed data models shared across views.",
+          "Next.js 14 web app with React and TypeScript, plus an Expo React Native client for mobile. Internationalization runs on next-intl and i18next so members can use the app in their language.",
       },
       {
-        label: "Hosting & CI",
+        label: "Backend",
         detail:
-          "Deployed on Vercel with preview deployments on every push so my partner and I could review changes before shipping.",
+          "NestJS API with Prisma ORM over PostgreSQL and Redis for caching. BullMQ handles background job queues (SMS/email dispatch), JWT with bcryptjs secures auth, and Zod validates input.",
       },
       {
-        label: "Collaboration",
+        label: "Notifications",
         detail:
-          "Split ownership across frontend and data model using a feature-branch workflow and PR review.",
+          "Twilio sends SMS reminders and SendGrid handles transactional email so members get event updates and RSVP confirmations.",
+      },
+      {
+        label: "Infrastructure",
+        detail:
+          "A pnpm monorepo houses the web, mobile, and backend packages, deployed on Vercel with preview deployments on every push for pre-merge review.",
       },
     ],
   },
@@ -111,7 +135,24 @@ export const projectsTier1: Project[] = [
     name: "SubletHub",
     description:
       "UCI student sublease marketplace with JWT auth, @uci.edu verification, real-time messaging, and admin auto-moderation.",
-    stack: ["React", "Express", "Prisma", "PostgreSQL", "Socket.io"],
+    stack: [
+      "React 18",
+      "React Router",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "Socket.io",
+      "JWT",
+      "bcryptjs",
+      "Multer",
+      "Nodemailer",
+      "Zod",
+      "Helmet",
+      "Docker",
+    ],
     heroImage: "/projects/sublethub-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -131,24 +172,29 @@ export const projectsTier1: Project[] = [
     ],
     technical: [
       {
-        label: "Auth",
+        label: "Frontend",
         detail:
-          "JWT access tokens with server-side verification middleware; registration is restricted to verified @uci.edu addresses.",
+          "React 18 with React Router and TypeScript, bundled by Vite and styled with Tailwind CSS for a fast, responsive listing feed.",
       },
       {
-        label: "Data layer",
+        label: "Backend & data",
         detail:
-          "Prisma ORM over PostgreSQL with typed models for users, listings, and conversations, plus relational constraints.",
+          "Express API with Prisma ORM over PostgreSQL and typed models for users, listings, and conversations. Zod validates input at every route.",
       },
       {
-        label: "Real-time",
+        label: "Auth & security",
         detail:
-          "Socket.io channels scoped per conversation deliver messages instantly and persist them to the database.",
+          "JWT access tokens with bcryptjs password hashing and server-side verification middleware; registration is restricted to verified @uci.edu addresses. Helmet sets secure headers and rate limiting guards the API.",
       },
       {
-        label: "Moderation",
+        label: "Real-time & media",
         detail:
-          "An admin surface auto-flags listings against a ruleset and lets moderators approve or remove posts.",
+          "Socket.io channels scoped per conversation deliver messages instantly, Multer handles listing photo uploads, and Nodemailer sends verification and notification email.",
+      },
+      {
+        label: "Infrastructure",
+        detail:
+          "Docker Compose runs Postgres and the services locally for a reproducible development environment.",
       },
     ],
   },
@@ -157,7 +203,15 @@ export const projectsTier1: Project[] = [
     name: "Rhythm Renew",
     description:
       "Cross-platform menstrual wellness app with phase-aware personalized recommendations filtered by dietary preferences and allergens.",
-    stack: ["React", "Capacitor", "TypeScript"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Capacitor",
+      "Expo React Native",
+      "Drizzle ORM",
+      "Metro",
+      "Babel",
+    ],
     heroImage: "/projects/rhythm-renew-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -178,17 +232,17 @@ export const projectsTier1: Project[] = [
       {
         label: "Cross-platform",
         detail:
-          "Capacitor wraps the React app into native iOS/Android builds while keeping a single TypeScript source of truth.",
+          "A React + TypeScript codebase ships to iOS, Android, and web through Capacitor, alongside an Expo React Native (v2) build. Metro bundles the native app and Babel handles transpilation.",
+      },
+      {
+        label: "Data layer",
+        detail:
+          "Drizzle ORM provides typed, schema-first access to the app's local and synced data.",
       },
       {
         label: "Personalization",
         detail:
-          "Recommendation logic keys off the tracked cycle phase and applies dietary/allergen filters before rendering.",
-      },
-      {
-        label: "Type safety",
-        detail:
-          "TypeScript models for phases, foods, and preferences keep the filtering pipeline predictable.",
+          "Recommendation logic keys off the tracked cycle phase and applies dietary/allergen filters before rendering, with TypeScript models keeping the pipeline predictable.",
       },
     ],
   },
@@ -197,7 +251,7 @@ export const projectsTier1: Project[] = [
     name: "Trek",
     description:
       "48-hour hackathon submission at BerkeleyHacks. Later integrated agentic workflows via FetchAI and voice via Deepgram.",
-    stack: ["Next.js", "React", "TypeScript"],
+    stack: ["Next.js", "React", "TypeScript", "FetchAI", "Deepgram", "Maps"],
     heroImage: "/projects/trek-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -229,6 +283,11 @@ export const projectsTier1: Project[] = [
         label: "Voice",
         detail:
           "Deepgram handles speech-to-text so trips can be planned by talking instead of typing.",
+      },
+      {
+        label: "Maps",
+        detail:
+          "A map integration visualizes each generated itinerary, keeping the schedule and locations in sync.",
       },
     ],
   },
@@ -408,7 +467,7 @@ export const projectsTier2: Project[] = [
     name: "Hand-Gestured Web Alarm",
     description:
       "Browser-based timer and alarm controlled by hand gestures via webcam using computer vision.",
-    stack: ["Angular", "TypeScript", "HTML/CSS"],
+    stack: ["Angular", "TypeScript", "HTML/CSS", "Computer Vision", "Karma"],
     heroImage: "/projects/hand-gestured-web-alarm-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -432,7 +491,12 @@ export const projectsTier2: Project[] = [
       {
         label: "Frontend",
         detail:
-          "Angular + TypeScript app rendering the timer state and live webcam overlay.",
+          "Angular + TypeScript app with HTML/CSS rendering the timer state and live webcam overlay.",
+      },
+      {
+        label: "Testing",
+        detail:
+          "Karma runs the unit test suite for the timer and gesture-handling logic.",
       },
     ],
   },
