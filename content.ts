@@ -277,7 +277,21 @@ export const projectsTier1: Project[] = [
     name: "Warehouse Management System",
     description:
       "Internal inventory and order management platform built for a small-business client at Alpha and Omega Computers.",
-    stack: ["React", "Node.js", "PostgreSQL"],
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Prisma 7",
+      "PostgreSQL 17",
+      "Zod 4",
+      "bcryptjs",
+      "Neon",
+      "Vercel",
+      "Docker",
+      "Turbopack",
+      "SheetJS",
+    ],
     heroImage: "/projects/wms-hero.png",
     liveUrl: "https://wms-lac-six.vercel.app",
     tagline: "Inventory and order management for a small business.",
@@ -317,22 +331,22 @@ export const projectsTier1: Project[] = [
       {
         label: "Frontend",
         detail:
-          "React dashboard with a dense, table-first layout tuned for daily operational use.",
+          "Next.js 16 (App Router, server components, server actions) with React 19 and useActionState-driven forms, TypeScript throughout, Tailwind CSS v4 for utility-first styling, and a custom i18n layer for an English/Chinese toggle with no external library.",
       },
       {
         label: "Backend",
         detail:
-          "Node.js API layer serving inventory and order data.",
+          "All mutations — login, orders, stock adjustments — run through Next.js server actions. Prisma 7 with the @prisma/adapter-pg driver talks to PostgreSQL 17, bcryptjs hashes passwords, and Zod 4 validates input at every boundary. Auth is hand-rolled: DB-backed sessions, httpOnly cookies, and SHA-256 token hashing.",
       },
       {
-        label: "Database",
+        label: "Infrastructure",
         detail:
-          "PostgreSQL stores inventory, orders, and their relationships with referential integrity.",
+          "Hosted on Vercel with auto-deploy from main. Neon provides managed serverless PostgreSQL via the Vercel integration in production, while Docker Compose runs a local Postgres for development.",
       },
       {
-        label: "Deployment",
+        label: "Tooling",
         detail:
-          "Hosted on Vercel and in active use by the client.",
+          "Turbopack as the default Next.js 16 bundler, ESLint for linting, tsx for running TypeScript scripts (seed, migrations), and SheetJS (xlsx) for bulk import from spreadsheets.",
       },
     ],
   },
