@@ -71,7 +71,26 @@ export const projectsTier1: Project[] = [
     name: "Judien",
     description:
       "Event RSVP platform for a Rotary International chapter in Taiwan. Co-built with a partner.",
-    stack: ["React", "TypeScript", "Vercel"],
+    stack: [
+      "Next.js 14",
+      "React",
+      "Expo React Native",
+      "TypeScript",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "BullMQ",
+      "JWT",
+      "bcryptjs",
+      "Twilio",
+      "SendGrid",
+      "next-intl",
+      "i18next",
+      "Zod",
+      "pnpm",
+      "Vercel",
+    ],
     heroImage: "/projects/judien-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -92,17 +111,22 @@ export const projectsTier1: Project[] = [
       {
         label: "Frontend",
         detail:
-          "React + TypeScript single-page app with a component-driven layout and typed data models shared across views.",
+          "Next.js 14 web app with React and TypeScript, plus an Expo React Native client for mobile. Internationalization runs on next-intl and i18next so members can use the app in their language.",
       },
       {
-        label: "Hosting & CI",
+        label: "Backend",
         detail:
-          "Deployed on Vercel with preview deployments on every push so my partner and I could review changes before shipping.",
+          "NestJS API with Prisma ORM over PostgreSQL and Redis for caching. BullMQ handles background job queues (SMS/email dispatch), JWT with bcryptjs secures auth, and Zod validates input.",
       },
       {
-        label: "Collaboration",
+        label: "Notifications",
         detail:
-          "Split ownership across frontend and data model using a feature-branch workflow and PR review.",
+          "Twilio sends SMS reminders and SendGrid handles transactional email so members get event updates and RSVP confirmations.",
+      },
+      {
+        label: "Infrastructure",
+        detail:
+          "A pnpm monorepo houses the web, mobile, and backend packages, deployed on Vercel with preview deployments on every push for pre-merge review.",
       },
     ],
   },
@@ -111,7 +135,24 @@ export const projectsTier1: Project[] = [
     name: "SubletHub",
     description:
       "UCI student sublease marketplace with JWT auth, @uci.edu verification, real-time messaging, and admin auto-moderation.",
-    stack: ["React", "Express", "Prisma", "PostgreSQL", "Socket.io"],
+    stack: [
+      "React 18",
+      "React Router",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "Socket.io",
+      "JWT",
+      "bcryptjs",
+      "Multer",
+      "Nodemailer",
+      "Zod",
+      "Helmet",
+      "Docker",
+    ],
     heroImage: "/projects/sublethub-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -131,24 +172,29 @@ export const projectsTier1: Project[] = [
     ],
     technical: [
       {
-        label: "Auth",
+        label: "Frontend",
         detail:
-          "JWT access tokens with server-side verification middleware; registration is restricted to verified @uci.edu addresses.",
+          "React 18 with React Router and TypeScript, bundled by Vite and styled with Tailwind CSS for a fast, responsive listing feed.",
       },
       {
-        label: "Data layer",
+        label: "Backend & data",
         detail:
-          "Prisma ORM over PostgreSQL with typed models for users, listings, and conversations, plus relational constraints.",
+          "Express API with Prisma ORM over PostgreSQL and typed models for users, listings, and conversations. Zod validates input at every route.",
       },
       {
-        label: "Real-time",
+        label: "Auth & security",
         detail:
-          "Socket.io channels scoped per conversation deliver messages instantly and persist them to the database.",
+          "JWT access tokens with bcryptjs password hashing and server-side verification middleware; registration is restricted to verified @uci.edu addresses. Helmet sets secure headers and rate limiting guards the API.",
       },
       {
-        label: "Moderation",
+        label: "Real-time & media",
         detail:
-          "An admin surface auto-flags listings against a ruleset and lets moderators approve or remove posts.",
+          "Socket.io channels scoped per conversation deliver messages instantly, Multer handles listing photo uploads, and Nodemailer sends verification and notification email.",
+      },
+      {
+        label: "Infrastructure",
+        detail:
+          "Docker Compose runs Postgres and the services locally for a reproducible development environment.",
       },
     ],
   },
@@ -157,7 +203,15 @@ export const projectsTier1: Project[] = [
     name: "Rhythm Renew",
     description:
       "Cross-platform menstrual wellness app with phase-aware personalized recommendations filtered by dietary preferences and allergens.",
-    stack: ["React", "Capacitor", "TypeScript"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Capacitor",
+      "Expo React Native",
+      "Drizzle ORM",
+      "Metro",
+      "Babel",
+    ],
     heroImage: "/projects/rhythm-renew-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -178,17 +232,17 @@ export const projectsTier1: Project[] = [
       {
         label: "Cross-platform",
         detail:
-          "Capacitor wraps the React app into native iOS/Android builds while keeping a single TypeScript source of truth.",
+          "A React + TypeScript codebase ships to iOS, Android, and web through Capacitor, alongside an Expo React Native (v2) build. Metro bundles the native app and Babel handles transpilation.",
+      },
+      {
+        label: "Data layer",
+        detail:
+          "Drizzle ORM provides typed, schema-first access to the app's local and synced data.",
       },
       {
         label: "Personalization",
         detail:
-          "Recommendation logic keys off the tracked cycle phase and applies dietary/allergen filters before rendering.",
-      },
-      {
-        label: "Type safety",
-        detail:
-          "TypeScript models for phases, foods, and preferences keep the filtering pipeline predictable.",
+          "Recommendation logic keys off the tracked cycle phase and applies dietary/allergen filters before rendering, with TypeScript models keeping the pipeline predictable.",
       },
     ],
   },
@@ -197,7 +251,7 @@ export const projectsTier1: Project[] = [
     name: "Trek",
     description:
       "48-hour hackathon submission at BerkeleyHacks. Later integrated agentic workflows via FetchAI and voice via Deepgram.",
-    stack: ["Next.js", "React", "TypeScript"],
+    stack: ["Next.js", "React", "TypeScript", "FetchAI", "Deepgram", "Maps"],
     heroImage: "/projects/trek-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -229,6 +283,11 @@ export const projectsTier1: Project[] = [
         label: "Voice",
         detail:
           "Deepgram handles speech-to-text so trips can be planned by talking instead of typing.",
+      },
+      {
+        label: "Maps",
+        detail:
+          "A map integration visualizes each generated itinerary, keeping the schedule and locations in sync.",
       },
     ],
   },
@@ -277,7 +336,21 @@ export const projectsTier1: Project[] = [
     name: "Warehouse Management System",
     description:
       "Internal inventory and order management platform built for a small-business client at Alpha and Omega Computers.",
-    stack: ["React", "Node.js", "PostgreSQL"],
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Prisma 7",
+      "PostgreSQL 17",
+      "Zod 4",
+      "bcryptjs",
+      "Neon",
+      "Vercel",
+      "Docker",
+      "Turbopack",
+      "SheetJS",
+    ],
     heroImage: "/projects/wms-hero.png",
     liveUrl: "https://wms-lac-six.vercel.app",
     tagline: "Inventory and order management for a small business.",
@@ -317,22 +390,22 @@ export const projectsTier1: Project[] = [
       {
         label: "Frontend",
         detail:
-          "React dashboard with a dense, table-first layout tuned for daily operational use.",
+          "Next.js 16 (App Router, server components, server actions) with React 19 and useActionState-driven forms, TypeScript throughout, Tailwind CSS v4 for utility-first styling, and a custom i18n layer for an English/Chinese toggle with no external library.",
       },
       {
         label: "Backend",
         detail:
-          "Node.js API layer serving inventory and order data.",
+          "All mutations — login, orders, stock adjustments — run through Next.js server actions. Prisma 7 with the @prisma/adapter-pg driver talks to PostgreSQL 17, bcryptjs hashes passwords, and Zod 4 validates input at every boundary. Auth is hand-rolled: DB-backed sessions, httpOnly cookies, and SHA-256 token hashing.",
       },
       {
-        label: "Database",
+        label: "Infrastructure",
         detail:
-          "PostgreSQL stores inventory, orders, and their relationships with referential integrity.",
+          "Hosted on Vercel with auto-deploy from main. Neon provides managed serverless PostgreSQL via the Vercel integration in production, while Docker Compose runs a local Postgres for development.",
       },
       {
-        label: "Deployment",
+        label: "Tooling",
         detail:
-          "Hosted on Vercel and in active use by the client.",
+          "Turbopack as the default Next.js 16 bundler, ESLint for linting, tsx for running TypeScript scripts (seed, migrations), and SheetJS (xlsx) for bulk import from spreadsheets.",
       },
     ],
   },
@@ -344,32 +417,48 @@ export const projectsTier2: Project[] = [
     slug: "art-movement-classifier",
     name: "Art Movement Classifier",
     description:
-      "Fine-tuned a SWIN Transformer to classify artwork genres across 10,000+ labeled images, reaching 93% test accuracy.",
-    stack: ["Python", "PyTorch", "SWIN"],
+      "Fine-tuned a Swin Transformer to classify paintings into 13 art movements, reaching 97% test accuracy.",
+    stack: [
+      "Python",
+      "PyTorch",
+      "Swin Transformer",
+      "NumPy",
+      "Pandas",
+      "Scikit-learn",
+      "Matplotlib",
+      "OpenCV",
+      "Pillow",
+      "Anaconda",
+    ],
     heroImage: "/projects/art-movement-classifier-hero.png",
     codeUrl: "#",
-    tagline: "93% accuracy classifying art movements with a SWIN Transformer.",
+    tagline: "97% accuracy classifying paintings across 13 art movements with a Swin Transformer.",
     role: "ML engineer",
     timeline: "2024",
     overview: [
-      "A computer-vision model that classifies a painting's art movement. I fine-tuned a SWIN Transformer on a dataset of 10,000+ labeled images and reached 93% accuracy on the held-out test set.",
+      "A computer-vision model that classifies a painting's art movement. I fine-tuned a Swin Transformer and reached 97% accuracy across 13 movements using data augmentation and hyper-tuned parameters.",
     ],
     highlights: [
-      "Fine-tuned a pretrained SWIN Transformer backbone.",
-      "10,000+ labeled artwork images across 10 movements.",
-      "93% test-set accuracy.",
+      "Fine-tuned a pretrained Swin Transformer backbone.",
+      "Classifies paintings into 13 distinct art movements.",
+      "97% test-set accuracy.",
       "Data augmentation and evaluation pipeline in PyTorch.",
     ],
     technical: [
       {
         label: "Model",
         detail:
-          "Transfer learning on a SWIN Transformer, with the classification head retrained on the art dataset.",
+          "A Swin Transformer architecture implemented in PyTorch, fine-tuned via transfer learning with the classification head retrained on the art dataset. Python is the primary language, with Anaconda managing the environment and packages.",
       },
       {
-        label: "Training",
+        label: "Data & preprocessing",
         detail:
-          "PyTorch training loop with augmentation, learning-rate scheduling, and per-class accuracy tracking.",
+          "NumPy and Pandas handle data processing, while OpenCV and Pillow power image processing and data augmentation to improve generalization across movements.",
+      },
+      {
+        label: "Training & evaluation",
+        detail:
+          "PyTorch training loop with hyper-tuned parameters and augmentation. Scikit-learn produces evaluation metrics and the confusion matrix, and Matplotlib visualizes results and per-class performance.",
       },
     ],
   },
@@ -378,7 +467,7 @@ export const projectsTier2: Project[] = [
     name: "Hand-Gestured Web Alarm",
     description:
       "Browser-based timer and alarm controlled by hand gestures via webcam using computer vision.",
-    stack: ["Angular", "TypeScript", "HTML/CSS"],
+    stack: ["Angular", "TypeScript", "HTML/CSS", "Computer Vision", "Karma"],
     heroImage: "/projects/hand-gestured-web-alarm-hero.png",
     liveUrl: "#",
     codeUrl: "#",
@@ -402,7 +491,12 @@ export const projectsTier2: Project[] = [
       {
         label: "Frontend",
         detail:
-          "Angular + TypeScript app rendering the timer state and live webcam overlay.",
+          "Angular + TypeScript app with HTML/CSS rendering the timer state and live webcam overlay.",
+      },
+      {
+        label: "Testing",
+        detail:
+          "Karma runs the unit test suite for the timer and gesture-handling logic.",
       },
     ],
   },
