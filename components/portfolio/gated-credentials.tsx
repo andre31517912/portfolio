@@ -1,5 +1,7 @@
 "use client"
 
+import { useState } from "react"
+
 type Credentials = { email: string; password: string; note?: string }
 
 export function GatedCredentials({
@@ -11,11 +13,31 @@ export function GatedCredentials({
   projectName: string
   contactEmail: string
 }) {
+  const [copied, setCopied] = useState(false)
+
   const subject = encodeURIComponent(`Demo access request — ${projectName}`)
   const body = encodeURIComponent(
     `Hi Andre,\n\nCould you share demo login access for ${projectName}? A bit about me:\n\n`,
   )
   const mailto = `mailto:${contactEmail}?subject=${subject}&body=${body}`
+
+  async function handleRequestAccess() {
+    // Copy the email so the viewer always walks away with a way to reach out,
+    // even when no mail client is configured or the frame blocks navigation.
+    try {
+      await navigator.clipboard.writeText(contactEmail)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2500)
+    } catch {
+      // Clipboard may be unavailable; the mail client attempt below still runs.
+    }
+
+    // Try to open the mail client. Use a new context so a sandboxed iframe
+    // that blocks top-level navigation can still hand off to the OS.
+    if (typeof window !== "undefined") {
+      window.open(mailto, "_blank")
+    }
+  }
 
   return (
     <div className="overflow-hidden rounded-lg border border-border bg-card/40">
@@ -49,12 +71,19 @@ export function GatedCredentials({
           <p className="max-w-xs text-pretty text-sm text-foreground">
             {credentials.note ?? "Login details are hidden. Email me to request access."}
           </p>
-          <a
-            href={mailto}
+          <button
+            type="button"
+            onClick={handleRequestAccess}
             className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
           >
             <LockIcon />
-            Request access
+            {copied ? "Email copied — reach out anytime" : "Request access"}
+          </button>
+          <a
+            href={mailto}
+            className="font-mono text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+          >
+            {contactEmail}
           </a>
         </div>
       </div>
