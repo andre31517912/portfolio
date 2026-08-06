@@ -551,25 +551,39 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    company: "Alpha and Omega Computers",
-    role: "Solutions Architect",
-    date: "2023 — Present",
+    company: "Alpha and Omega Computer Software Solutions",
+    role: "Assistant Solutions Architect",
+    date: "May 2026 — Present",
     description:
-      "Design and deploy end-to-end systems for small-business clients.",
-  },
-  {
-    company: "HandshakeAI",
-    role: "AI Trainer",
-    date: "2023",
-    description:
-      "Evaluated and refined model outputs to improve response quality.",
+      "Lead growth operations and outreach. Shipped a major website redesign on ASP.NET Core MVC (C#, EF Core, MySQL, Bootstrap 5, AWS) focused on SEO and performance, built a fully customized CRM tailored to company workflow, and deployed scraping agents that verify business legitimacy at a 95% confidence rate — trimming 70% of invalid leads.",
   },
   {
     company: "BeReal",
-    role: "Product Design Extern",
-    date: "2022",
+    role: "Product Design & UI/UX Extern",
+    date: "Nov 2025 — Feb 2026",
     description:
-      "Prototyped feature concepts and contributed to design reviews.",
+      "Owned end-to-end product concept development aimed at growing MAU. Produced lo-fi and hi-fi UI/UX in Figma and Canva, ran user research through study groups and surveys, and benchmarked features against key competitors to surface engagement gaps and differentiation opportunities for stakeholders.",
+  },
+  {
+    company: "Cortica",
+    role: "Behavior Technician",
+    date: "Jul 2025 — Nov 2025",
+    description:
+      "Ran hourly sessions with children diagnosed with ASD, collecting and processing clinical data for interdisciplinary care teams. Automated data pipelines with Python (pandas, NumPy) and built custom dashboards to translate complex behavioral data into actionable insights through statistical analysis and visualization.",
+  },
+  {
+    company: "Phi Kappa Psi Fraternity",
+    role: "VP of Operations, Marketing & Outreach",
+    date: "Nov 2023 — Jun 2025",
+    description:
+      "Scaled the chapter from 9 to 50 members in one year, driving engagement up 550% and social presence up 210%. Led a philanthropy fundraiser that raised over $8k, managed sponsorships and onboarding, and applied A/B testing and data analysis to optimize marketing and events.",
+  },
+  {
+    company: "Self-Employed",
+    role: "Content Analyst",
+    date: "Mar 2022 — Apr 2025",
+    description:
+      "Grew client social accounts to 24K followers and 3.4M total likes. Analyzed KPIs (engagement rate, impressions, reach) via custom dashboards, evaluated sponsor campaigns on conversion and ROI, and used A/B testing to identify high-impact content formats.",
   },
 ]
 
@@ -578,7 +592,7 @@ export const contact = {
   email: "wuandre6@gmail.com",
   links: [
     { label: "GitHub", href: "https://github.com/andre31517912" },
-    { label: "LinkedIn", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/andre-wu-146088250" },
     { label: "Resume", href: "#" },
   ],
 }
