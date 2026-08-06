@@ -358,32 +358,48 @@ export const projectsTier2: Project[] = [
     slug: "art-movement-classifier",
     name: "Art Movement Classifier",
     description:
-      "Fine-tuned a SWIN Transformer to classify artwork genres across 10,000+ labeled images, reaching 93% test accuracy.",
-    stack: ["Python", "PyTorch", "SWIN"],
+      "Fine-tuned a Swin Transformer to classify paintings into 13 art movements, reaching 97% test accuracy.",
+    stack: [
+      "Python",
+      "PyTorch",
+      "Swin Transformer",
+      "NumPy",
+      "Pandas",
+      "Scikit-learn",
+      "Matplotlib",
+      "OpenCV",
+      "Pillow",
+      "Anaconda",
+    ],
     heroImage: "/projects/art-movement-classifier-hero.png",
     codeUrl: "#",
-    tagline: "93% accuracy classifying art movements with a SWIN Transformer.",
+    tagline: "97% accuracy classifying paintings across 13 art movements with a Swin Transformer.",
     role: "ML engineer",
     timeline: "2024",
     overview: [
-      "A computer-vision model that classifies a painting's art movement. I fine-tuned a SWIN Transformer on a dataset of 10,000+ labeled images and reached 93% accuracy on the held-out test set.",
+      "A computer-vision model that classifies a painting's art movement. I fine-tuned a Swin Transformer and reached 97% accuracy across 13 movements using data augmentation and hyper-tuned parameters.",
     ],
     highlights: [
-      "Fine-tuned a pretrained SWIN Transformer backbone.",
-      "10,000+ labeled artwork images across 10 movements.",
-      "93% test-set accuracy.",
+      "Fine-tuned a pretrained Swin Transformer backbone.",
+      "Classifies paintings into 13 distinct art movements.",
+      "97% test-set accuracy.",
       "Data augmentation and evaluation pipeline in PyTorch.",
     ],
     technical: [
       {
         label: "Model",
         detail:
-          "Transfer learning on a SWIN Transformer, with the classification head retrained on the art dataset.",
+          "A Swin Transformer architecture implemented in PyTorch, fine-tuned via transfer learning with the classification head retrained on the art dataset. Python is the primary language, with Anaconda managing the environment and packages.",
       },
       {
-        label: "Training",
+        label: "Data & preprocessing",
         detail:
-          "PyTorch training loop with augmentation, learning-rate scheduling, and per-class accuracy tracking.",
+          "NumPy and Pandas handle data processing, while OpenCV and Pillow power image processing and data augmentation to improve generalization across movements.",
+      },
+      {
+        label: "Training & evaluation",
+        detail:
+          "PyTorch training loop with hyper-tuned parameters and augmentation. Scikit-learn produces evaluation metrics and the confusion matrix, and Matplotlib visualizes results and per-class performance.",
       },
     ],
   },
