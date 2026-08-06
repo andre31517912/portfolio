@@ -119,11 +119,7 @@ export default async function ProjectDetailPage({
       {project.credentials ? (
         <Reveal className="mt-10" as="section">
           <RevealItem>
-            <GatedCredentials
-              credentials={project.credentials}
-              projectName={project.name}
-              contactEmail={contact.email}
-            />
+            <GatedCredentials credentials={project.credentials} projectName={project.name} />
           </RevealItem>
         </Reveal>
       ) : null}
