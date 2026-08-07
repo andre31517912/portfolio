@@ -429,6 +429,18 @@ export const projectsTier2: Project[] = [
       "AWS",
     ],
     heroImage: "/projects/aoc-website-hero.png",
+    gallery: [
+      {
+        src: "/projects/aoc-website-about.png",
+        alt: "Alpha & Omega About page with mission statement, company stats, and an industries-served card carousel",
+        caption: "About page — mission, company stats, and the industries we serve.",
+      },
+      {
+        src: "/projects/aoc-website-insights.png",
+        alt: "Alpha & Omega Insights page with a grid of client story and blog article cards and a recent-posts sidebar",
+        caption: "Insights — client stories and blog posts with a recent-posts sidebar.",
+      },
+    ],
     liveUrl: "https://test.aocit.com",
     codeUrl: "https://github.com/andre31517912/aoc_web",
     tagline: "A rebuilt company website tuned for SEO and speed.",
