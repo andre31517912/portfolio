@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Project } from '@/content'
+import { GithubIcon } from '@/components/portfolio/github-icon'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 12 },
@@ -20,9 +21,13 @@ function ExternalLinks({ project }: { project: Project }) {
   const hasAny = project.liveUrl || project.codeUrl
   if (!hasAny) return null
   return (
-    <div className="flex flex-wrap gap-x-5 gap-y-2 border-t border-border px-6 py-4 text-sm md:px-8">
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-border px-6 py-4 text-sm md:px-8">
       {project.liveUrl ? <ExternalLink href={project.liveUrl}>Live demo →</ExternalLink> : null}
-      {project.codeUrl ? <ExternalLink href={project.codeUrl}>Code →</ExternalLink> : null}
+      {project.codeUrl ? (
+        <ExternalLink href={project.codeUrl} icon={<GithubIcon className="h-4 w-4" />}>
+          Code
+        </ExternalLink>
+      ) : null}
     </div>
   )
 }
@@ -135,14 +140,23 @@ export function ProjectCardCompact({ project }: { project: Project }) {
   )
 }
 
-function ExternalLink({ href, children }: { href: string; children: string }) {
+function ExternalLink({
+  href,
+  children,
+  icon,
+}: {
+  href: string
+  children: string
+  icon?: React.ReactNode
+}) {
   const isPlaceholder = href === '#'
   return (
     <a
       href={href}
-      className="group/link relative inline-block py-1 text-foreground"
+      className="group/link relative inline-flex items-center gap-1.5 py-1 text-foreground"
       {...(isPlaceholder ? {} : { target: '_blank', rel: 'noreferrer' })}
     >
+      {icon}
       {children}
       <span className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-200 group-hover/link:w-full" />
     </a>
