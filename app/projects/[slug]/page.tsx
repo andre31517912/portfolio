@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { GithubIcon } from '@/components/portfolio/github-icon'
 import { allProjects, contact, getProjectBySlug, site } from '@/content'
 import { Reveal, RevealItem } from '@/components/portfolio/reveal'
 import { SectionLabel } from '@/components/portfolio/section-label'
@@ -97,7 +98,12 @@ export default async function ProjectDetailPage({
                 <ExternalLink href={project.liveUrl}>Visit live site →</ExternalLink>
               ) : null}
               {project.codeUrl && project.codeUrl !== '#' ? (
-                <ExternalLink href={project.codeUrl}>Source code →</ExternalLink>
+                <ExternalLink
+                  href={project.codeUrl}
+                  icon={<GithubIcon className="h-4 w-4" />}
+                >
+                  Source code
+                </ExternalLink>
               ) : null}
               {(!project.liveUrl || project.liveUrl === '#') &&
               (!project.codeUrl || project.codeUrl === '#') ? (
@@ -215,14 +221,23 @@ export default async function ProjectDetailPage({
   )
 }
 
-function ExternalLink({ href, children }: { href: string; children: string }) {
+function ExternalLink({
+  href,
+  children,
+  icon,
+}: {
+  href: string
+  children: string
+  icon?: React.ReactNode
+}) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="group/link relative inline-block py-1 text-foreground"
+      className="group/link relative inline-flex items-center gap-1.5 py-1 text-foreground"
     >
+      {icon}
       {children}
       <span className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-200 group-hover/link:w-full" />
     </a>
