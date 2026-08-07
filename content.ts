@@ -429,6 +429,7 @@ export const projectsTier2: Project[] = [
       "AWS",
     ],
     heroImage: "/projects/aoc-website-hero.png",
+    liveUrl: "https://test.aocit.com",
     codeUrl: "https://github.com/andre31517912/aoc_web",
     tagline: "A rebuilt company website tuned for SEO and speed.",
     role: "Assistant Solutions Architect — Alpha & Omega",
