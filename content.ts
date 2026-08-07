@@ -93,7 +93,7 @@ export const projectsTier1: Project[] = [
     ],
     heroImage: "/projects/judien-hero.png",
     liveUrl: "#",
-    codeUrl: "#",
+    codeUrl: "https://github.com/andre31517912/judien",
     tagline: "Event RSVP platform for a Rotary International chapter.",
     role: "Full-stack developer (co-built with a partner)",
     timeline: "2023",
@@ -155,7 +155,7 @@ export const projectsTier1: Project[] = [
     ],
     heroImage: "/projects/sublethub-hero.png",
     liveUrl: "#",
-    codeUrl: "#",
+    codeUrl: "https://github.com/andre31517912/sublethub",
     tagline: "A trusted sublease marketplace for UCI students.",
     role: "Full-stack developer",
     timeline: "2024",
@@ -214,7 +214,7 @@ export const projectsTier1: Project[] = [
     ],
     heroImage: "/projects/rhythm-renew-hero.png",
     liveUrl: "#",
-    codeUrl: "#",
+    codeUrl: "https://github.com/andre31517912/rhythm-renew-2",
     tagline: "Phase-aware wellness recommendations, on web and mobile.",
     role: "Full-stack developer",
     timeline: "2024",
@@ -299,7 +299,7 @@ export const projectsTier1: Project[] = [
     stack: ["Angular", "TypeScript", "Node.js", "Express", "Spotify API"],
     heroImage: "/projects/spotify-browser-hero.png",
     liveUrl: "#",
-    codeUrl: "#",
+    codeUrl: "https://github.com/andre31517912/spotify-browser",
     tagline: "Explore artists, albums, and tracks from the Spotify API.",
     role: "Full-stack developer",
     timeline: "2023",
@@ -353,6 +353,7 @@ export const projectsTier1: Project[] = [
     ],
     heroImage: "/projects/wms-hero.png",
     liveUrl: "https://wms-lac-six.vercel.app",
+    codeUrl: "https://github.com/andre31517912/wms",
     tagline: "Inventory and order management for a small business.",
     role: "Solutions Architect — Alpha and Omega Computers",
     timeline: "2023 — Present",
@@ -414,6 +415,52 @@ export const projectsTier1: Project[] = [
 // TIER 2 — Other Work. Condensed cards, 3 per row on desktop.
 export const projectsTier2: Project[] = [
   {
+    slug: "aoc-website",
+    name: "Alpha & Omega Website",
+    description:
+      "Full redesign of the Alpha & Omega Computer Software Solutions site, built on ASP.NET Core MVC with a focus on SEO and performance.",
+    stack: [
+      "ASP.NET Core MVC",
+      "C#",
+      "EF Core",
+      "MySQL",
+      "Bootstrap 5",
+      "HTML/CSS",
+      "AWS",
+    ],
+    heroImage: "/projects/aoc-website-hero.png",
+    codeUrl: "https://github.com/andre31517912/aoc_web",
+    tagline: "A rebuilt company website tuned for SEO and speed.",
+    role: "Assistant Solutions Architect — Alpha & Omega",
+    timeline: "2026 — Present",
+    overview: [
+      "A ground-up redesign of the Alpha & Omega Computer Software Solutions marketing site. I rebuilt the front end and templating on ASP.NET Core MVC, prioritizing search visibility and page performance to drive inbound leads.",
+    ],
+    highlights: [
+      "Full visual and structural redesign of the company site.",
+      "SEO-focused markup, metadata, and semantic structure.",
+      "Performance-tuned pages for fast loads.",
+      "Deployed on AWS.",
+    ],
+    technical: [
+      {
+        label: "Framework",
+        detail:
+          "ASP.NET Core MVC with C# and Razor views, backed by EF Core over a MySQL database.",
+      },
+      {
+        label: "Frontend",
+        detail:
+          "Bootstrap 5 with custom HTML/CSS for a responsive, accessible layout across devices.",
+      },
+      {
+        label: "Infrastructure",
+        detail:
+          "Hosted on AWS, with an emphasis on caching and asset optimization for performance.",
+      },
+    ],
+  },
+  {
     slug: "art-movement-classifier",
     name: "Art Movement Classifier",
     description:
@@ -431,7 +478,7 @@ export const projectsTier2: Project[] = [
       "Anaconda",
     ],
     heroImage: "/projects/art-movement-classifier-hero.png",
-    codeUrl: "#",
+    codeUrl: "https://github.com/andre31517912/art-movement-classifier",
     tagline: "97% accuracy classifying paintings across 13 art movements with a Swin Transformer.",
     role: "ML engineer",
     timeline: "2024",
@@ -470,7 +517,7 @@ export const projectsTier2: Project[] = [
     stack: ["Angular", "TypeScript", "HTML/CSS", "Computer Vision", "Karma"],
     heroImage: "/projects/hand-gestured-web-alarm-hero.png",
     liveUrl: "#",
-    codeUrl: "#",
+    codeUrl: "https://github.com/andre31517912/Hand-gestured-web-alarm",
     tagline: "Set and dismiss alarms with hand gestures, no touch needed.",
     role: "Frontend developer",
     timeline: "2023",
@@ -507,7 +554,7 @@ export const projectsTier2: Project[] = [
       "Python crawler indexing 30,000+ pages, returning ranked results in under 300ms via hashmap indexing and SQL storage.",
     stack: ["Python", "SQL", "Retrieval"],
     heroImage: "/projects/web-crawler-search-engine-hero.png",
-    codeUrl: "#",
+    codeUrl: "https://github.com/andre31517912/cs121-web-crawler",
     tagline: "Sub-300ms ranked search over 30,000+ crawled pages.",
     role: "Backend developer",
     timeline: "2024",
