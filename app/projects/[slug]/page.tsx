@@ -56,7 +56,7 @@ export default async function ProjectDetailPage({
     <main className="mx-auto w-full max-w-4xl px-6 py-16 md:px-10 md:py-24 lg:px-0">
       {/* Back link */}
       <Link
-        href="/#projects"
+        href="/tech"
         className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >
         <span aria-hidden="true" className="transition-transform group-hover:-translate-x-0.5">
@@ -208,7 +208,7 @@ export default async function ProjectDetailPage({
       {/* Footer nav */}
       <div className="mt-20 border-t border-border pt-8">
         <Link
-          href="/#projects"
+          href="/tech"
           className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <span aria-hidden="true" className="transition-transform group-hover:-translate-x-0.5">

@@ -5,25 +5,33 @@
  */
 
 export const site = {
-  name: "Andre Wu",
-  role: "Full-stack developer",
-  // Used for <title>, meta description, and Open Graph.
-  metaTitle: "Andre Wu — Full-stack developer",
+  name: "DRESS",
+  role: "Creative × Code",
+  metaTitle: "DRESS — Creative × Code",
   metaDescription:
-    "Andre Wu is a full-stack web developer building software that ships. React, Next.js, TypeScript, Node, and PostgreSQL.",
+    "DRESS is a creative brand by Andre Wu. Photography, music, and full-stack software.",
   url: "https://andrewu.dev",
 }
 
 export const hero = {
-  name: "Andre Wu",
-  tagline: "Full-stack developer building software that ships.",
+  name: "DRESS",
+  tagline: "no flex zone.",
+}
+
+export const brand = {
+  artEmail: "dresswhatever@gmail.com",
+  techEmail: "wuandre6@gmail.com",
+  instagram: "https://www.instagram.com/perc3k/",
+  instagramHandle: "@perc3k",
+  soundcloud: "https://soundcloud.com/dresswhatever",
+  soundcloudHandle: "DRESS WHATEVER",
+  github: "https://github.com/andre31517912",
+  linkedin: "https://www.linkedin.com/in/andre-wu-146088250",
 }
 
 export const about = {
-  // 2–3 sentences. Keep it tight.
   paragraph:
     "I'm an early-career full-stack developer who has shipped production apps for real users — from event platforms to student marketplaces. I care about clean architecture, fast interfaces, and code that holds up after launch. I'm looking for a junior-to-mid role where I can keep shipping.",
-  // Small stack list on the right. Edit freely.
   stack: ["React", "Next.js", "TypeScript", "Node", "PostgreSQL", "Prisma"],
 }
 
@@ -356,19 +364,29 @@ export const projectsTier1: Project[] = [
     codeUrl: "https://github.com/andre31517912/wms",
     tagline: "Inventory and order management for a small business.",
     role: "Solutions Architect — Alpha and Omega Computers",
-    timeline: "2023 — Present",
+    timeline: "2025 — Present",
     // Add as many images as you want here — the detail page shows them in a
     // horizontal, swipeable/scrollable gallery (hero first, then these).
     gallery: [
       {
-        src: "/projects/wms-orders.png",
-        alt: "Warehouse order management screen with status pills and an order detail drawer",
-        caption: "Order management — track incoming and outgoing orders by status.",
+        src: "/projects/wms-dashboard.jpg",
+        alt: "WMS dashboard with active items, low stock, pending orders, and inventory table",
+        caption: "Dashboard — summary metrics and full inventory at a glance.",
       },
       {
-        src: "/projects/wms-item.png",
-        alt: "Inventory item detail with SKU, stock level, supplier, and stock-history chart",
-        caption: "Item detail — stock levels, supplier info, and stock history.",
+        src: "/projects/wms-inventory.jpg",
+        alt: "Products & Items page with product categories, item counts, and add/edit actions",
+        caption: "Inventory — product categories with item counts and inline management.",
+      },
+      {
+        src: "/projects/wms-customers.jpg",
+        alt: "Customer management table with status pills, registration dates, and approve/disable actions",
+        caption: "Customers — approval workflow with status tracking and order history links.",
+      },
+      {
+        src: "/projects/wms-stock-history.jpg",
+        alt: "Stock history log with movement totals, item changes, and filter controls",
+        caption: "Stock History — 3,900 units tracked across 29 movements with reason and audit trail.",
       },
     ],
     // Blurred demo login. Viewers must email to unlock full access.
@@ -428,11 +446,34 @@ export const projectsTier2: Project[] = [
       "HTML/CSS",
       "AWS",
     ],
-    heroImage: "/projects/aoc-website-hero.png",
+    heroImage: "/projects/aoc-homepage-hero.jpg",
+    liveUrl: "https://test.aocit.com/",
     codeUrl: "https://github.com/andre31517912/aoc_web",
     tagline: "A rebuilt company website tuned for SEO and speed.",
     role: "Assistant Solutions Architect — Alpha & Omega",
     timeline: "2026 — Present",
+    gallery: [
+      {
+        src: "/projects/aoc-services-cards.jpg",
+        alt: "AOC services overview with color-coded service cards and capability tags",
+        caption: "Services overview — color-coded cards for Custom Software, QuickBooks, Managed IT, and AWS, plus capability tags.",
+      },
+      {
+        src: "/projects/aoc-about.jpg",
+        alt: "AOC about page showing company mission and history since 1987",
+        caption: "About page — company mission, 39-year history, and industry reach across Greater Los Angeles.",
+      },
+      {
+        src: "/projects/aoc-services.jpg",
+        alt: "AOC dedicated services page with core service offerings and descriptions",
+        caption: "Services page — detailed breakdown of core service offerings from infrastructure to custom software.",
+      },
+      {
+        src: "/projects/aoc-contact.jpg",
+        alt: "AOC contact form with fields for name, email, phone, and company",
+        caption: "Contact page — lead capture form for booking a free consultation.",
+      },
+    ],
     overview: [
       "A ground-up redesign of the Alpha & Omega Computer Software Solutions marketing site. I rebuilt the front end and templating on ASP.NET Core MVC, prioritizing search visibility and page performance to drive inbound leads.",
     ],
@@ -662,3 +703,48 @@ export const contact = {
     { label: "Resume", href: "#" },
   ],
 }
+
+export type PhotoShoot = {
+  id: string
+  title: string
+  images: string[]
+  caption?: string
+}
+
+export const photoShoots: PhotoShoot[] = [
+  {
+    id: "search-for-god",
+    title: "search for god",
+    images: ["/dress/photos/search-for-god-1.jpg"],
+    caption: "search for god",
+  },
+  {
+    id: "tru",
+    title: "tru",
+    images: ["/dress/photos/tru-1.jpg"],
+    caption: "tru",
+  },
+  {
+    id: "root-of-avarice",
+    title: "root of avarice",
+    images: ["/dress/photos/root-of-avarice-1.jpg"],
+    caption: "root of avarice — scanned by @matthewanthonytran",
+  },
+  {
+    id: "p-shoot",
+    title: "Untitled",
+    images: ["/dress/photos/p-shoot-1.jpg"],
+  },
+  {
+    id: "frat-party",
+    title: "frat party",
+    images: ["/dress/photos/frat-party-1.jpg"],
+    caption: "frat party 6/5/26",
+  },
+  {
+    id: "incubator-set",
+    title: "incubator set",
+    images: ["/dress/photos/incubator-set-1.jpg"],
+    caption: "@4nna1una set for @startnow.incubator",
+  },
+]

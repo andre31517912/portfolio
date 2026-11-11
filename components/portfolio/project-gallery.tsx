@@ -4,6 +4,44 @@ import Image from "next/image"
 import { useCallback, useEffect, useRef, useState } from "react"
 import type { GalleryImage } from "@/content"
 
+function Slide({ img, index, total }: { img: GalleryImage; index: number; total: number }) {
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <figure
+      className="w-full shrink-0 snap-center"
+      aria-roledescription="slide"
+      aria-label={`${index + 1} of ${total}`}
+    >
+      <div
+        className="relative overflow-hidden rounded-lg border border-border bg-card/40"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <Image
+          src={img.src || "/placeholder.svg"}
+          alt={img.alt}
+          width={1600}
+          height={1000}
+          priority={index === 0}
+          className="h-auto w-full object-cover"
+        />
+        {img.caption ? (
+          <figcaption
+            className="pointer-events-none absolute inset-x-0 bottom-0 px-5 pb-4 pt-10 text-sm text-white/90 transition-opacity duration-300 ease-out"
+            style={{
+              opacity: hovered ? 1 : 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.4) 60%, transparent)",
+            }}
+          >
+            {img.caption}
+          </figcaption>
+        ) : null}
+      </div>
+    </figure>
+  )
+}
+
 export function ProjectGallery({ images }: { images: GalleryImage[] }) {
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(0)
@@ -16,7 +54,6 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
     const { scrollLeft, scrollWidth, clientWidth } = el
     setCanPrev(scrollLeft > 8)
     setCanNext(scrollLeft < scrollWidth - clientWidth - 8)
-    // Which slide is most centered.
     const slideWidth = el.firstElementChild
       ? (el.firstElementChild as HTMLElement).offsetWidth + 16
       : clientWidth
@@ -67,28 +104,7 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
         aria-label="Project screenshots"
       >
         {images.map((img, i) => (
-          <figure
-            key={img.src}
-            className="w-full shrink-0 snap-center"
-            aria-roledescription="slide"
-            aria-label={`${i + 1} of ${images.length}`}
-          >
-            <div className="overflow-hidden rounded-lg border border-border bg-card/40">
-              <Image
-                src={img.src || "/placeholder.svg"}
-                alt={img.alt}
-                width={1600}
-                height={1000}
-                priority={i === 0}
-                className="h-auto w-full object-cover"
-              />
-              {img.caption ? (
-                <figcaption className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
-                  {img.caption}
-                </figcaption>
-              ) : null}
-            </div>
-          </figure>
+          <Slide key={img.src} img={img} index={i} total={images.length} />
         ))}
       </div>
 
